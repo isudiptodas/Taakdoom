@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@plugin "tailwindcss-motion";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: LemonMilk;
+  font-style: normal;
+  src: url("/fonts/LEMONMILK-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: ModernRomance;
+  font-style: normal;
+  src: url("/fonts/Modern-Romance.otf") format("opentype");
+}
+@font-face {
+  font-family: SuperJello;
+  font-style: normal;
+  src: url("/fonts/Super-Jello.ttf") format("truetype");
+}
+@font-face {
+  font-family: ValentineCute;
+  font-style: normal;
+  src: url("/fonts/Valentine-Cute.ttf") format("truetype");
+}
+
+@theme{
+    --font-Lemon: "LemonMilk";
+    --font-Modern: "ModernRomance";
+    --font-SuperJello: "SuperJello";
+    --font-Valentine: "ValentineCute";
+}
