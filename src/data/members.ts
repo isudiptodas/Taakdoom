@@ -14,14 +14,11 @@ export const members = [
     {
         name:  `Santanu Dutta`,
         points: [
-            'Brand Film',
-            'Music BGM',
-            'Digital Content',
-            'Cinematography',
-            'AI Film Making',
-            'AD Creation'
+            'Business Development',
+            'Film & Music Direction',
+            'Sales Management',
         ],
-        image: `/assets/members/krishanu-dutta.png`
+        image: `/assets/members/santanu-dutta.png`
     },
     {
         name:  `Swarup Sikdar`,

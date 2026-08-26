@@ -24,6 +24,14 @@ export const navLinks = [
         url: "/#mission"
     },
     {
+        name: "Vision",
+        url: "/#vision"
+    },
+    {
+        name: "Values",
+        url: "/#values"
+    },
+    {
         name: "Clients",
         url: "/#clients"
     },
