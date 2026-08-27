@@ -110,10 +110,10 @@ export default function Footer() {
                         
                         <motion.p initial={{ y: 50, opacity: 0, filter: "blur(20px)" }} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.4, ease: "easeInOut" }} className={`w-full text-center text-xl font-bold my-5`}>Contact Us</motion.p>
                         
-                        <input value={data.name} name="name" onChange={(e) => handleChange(e)} type="text" className={`w-full px-5 py-3 rounded-full bg-gray-200 outline-none`} placeholder="Enter your name" />
-                        <input value={data.email} name="email" onChange={(e) => handleChange(e)} type="text" className={`w-full px-5 py-3 rounded-full bg-gray-200 outline-none`} placeholder="Enter your email" />
+                        <input value={data.name} name="name" onChange={(e) => handleChange(e)} type="text" className={`w-full px-5 py-3 rounded-full bg-gray-200 outline-none`} placeholder="Enter your name*" />
+                        <input value={data.email} name="email" onChange={(e) => handleChange(e)} type="text" className={`w-full px-5 py-3 rounded-full bg-gray-200 outline-none`} placeholder="Enter your email*" />
                         <input value={data.company} name="company" onChange={(e) => handleChange(e)} type="text" className={`w-full px-5 py-3 rounded-full bg-gray-200 outline-none`} placeholder="Enter your company" />
-                        <textarea value={data.message} name="message" onChange={(e) => handleChange(e)} className={`w-full h-44 px-5 py-3 rounded-3xl bg-gray-200 outline-none`} placeholder="Enter your message" />
+                        <textarea value={data.message} name="message" onChange={(e) => handleChange(e)} className={`w-full h-44 px-5 py-3 rounded-3xl bg-gray-200 outline-none`} placeholder="Enter your message*" />
                         <p onClick={submitMessage} className={`w-full py-3 rounded-full text-white text-center active:opacity-70 duration-300 ease-in-out cursor-pointer bg-linear-to-br from-zinc-950 to-[#5a5a5a]`} >Submit</p>
                     </motion.div>
 
