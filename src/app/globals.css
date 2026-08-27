@@ -5,6 +5,10 @@ html {
   scroll-behavior: smooth;
 }
 
+h1, span, p {
+  user-select: none;
+}
+
 @font-face {
   font-family: LemonMilk;
   font-style: normal;

@@ -1,6 +1,7 @@
 'use client'
 
 import { navLinks } from "@/data/navlinks";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
@@ -29,16 +30,16 @@ function Navbar({ menuVisible }: props) {
 
     return (
         <>
-            <div className={`w-[95%] transition-all duration-500 ${isScrolled ? "xl:w-[85%]" : ""} rounded-full fixed top-7 z-50 h-auto backdrop-blur-3xl bg-white/20 flex justify-between items-center overflow-hidden`}>
+            <motion.div initial={{opacity: 0, filter: "blur(20px)"}} animate={{opacity: 1, filter: "blur(0px)"}} transition={{duration: 0.3, ease: "easeInOut"}} className={`w-[95%] transition-all duration-500 ${isScrolled ? "xl:w-[85%]" : ""} rounded-full fixed top-7 z-50 h-auto backdrop-blur-3xl bg-white/20 flex justify-between items-center overflow-hidden`}>
                 <div className={`w-auto px-3 flex justify-center items-center gap-3`}>
-                    <div className={`w-auto p-2 rounded-full bg-linear-to-br from-black to-[#d7005d]`}>
+                    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.3, ease: "easeInOut"}} className={`w-auto p-2 rounded-full bg-linear-to-br from-black to-[#d7005d]`}>
                         <img src="/assets/logo.png" className={`h-5`} />
-                    </div>
-                    <span className={`w-auto py-5 font-black text-white select-none`}>TAAKDOOM</span>
+                    </motion.div>
+                    <motion.span initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.3, ease: "easeInOut"}} className={`w-auto py-5 font-black text-white select-none`}>TAAKDOOM</motion.span>
                 </div>
 
                 <div className={`w-auto pr-5 flex justify-center items-center`}>
-                    <span onClick={menuVisible} className={`bg-white xl:hidden p-2 rounded-full`}><HiOutlineMenuAlt4 className={`text-xl select-none`} /></span>
+                    <motion.span initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.3, ease: "easeInOut"}} onClick={menuVisible} className={`bg-white xl:hidden p-2 rounded-full`}><HiOutlineMenuAlt4 className={`text-xl select-none`} /></motion.span>
 
                     {/* laptop menus */}
                     <div className={`w-full hidden px-4 xl:px-2 xl:flex justify-center items-center`}>
@@ -50,7 +51,7 @@ function Navbar({ menuVisible }: props) {
                         })}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

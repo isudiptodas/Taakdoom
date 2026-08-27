@@ -12,8 +12,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en">
       <body>
+        {children}
         <Toaster position="top-center" richColors />
-        {children}</body>
+      </body>
     </html>
   );
 }
