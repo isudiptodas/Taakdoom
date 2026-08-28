@@ -1,4 +1,5 @@
 import { CompanyEmailTemplate } from "@/components/CompanyEmailTemplate";
+import { UserEmailTemplate } from "@/components/UserEmailTemplate";
 import { connectDB } from "@/config/connectDB";
 import { Message } from "@/models/message";
 import { NextRequest, NextResponse } from "next/server";
@@ -17,17 +18,29 @@ export async function POST(req: NextRequest) {
 
         await newMessage.save();
 
-        const { data: emailData, error } = await resend.emails.send({
+        const { data: companyEmail, error } = await resend.emails.send({
             from: 'Acme <onboarding@resend.dev>',
             to: ['marketing@taakdoom.com'],
             subject: 'Taakdoom Enquiry Message',
-            react: CompanyEmailTemplate({ name: data?.name }),
+            react: CompanyEmailTemplate({ name: data?.name, company: data?.company, email: data.email, message: data.message }),
         });
 
         if (error) {
             console.log(error);
             return Response.json({ error }, { status: 500 });
         }
+
+        // const { data: userEmail, error: err } = await resend.emails.send({
+        //     from: 'Acme <onboarding@resend.dev>',
+        //     to: [data.email as string],
+        //     subject: 'Taakdoom Enquiry Message',
+        //     react: UserEmailTemplate({ name: data?.name }),
+        // });
+
+        // if (error) {
+        //     console.log(error);
+        //     return Response.json({ error }, { status: 500 });
+        // }
 
         return NextResponse.json({
             success: true,
